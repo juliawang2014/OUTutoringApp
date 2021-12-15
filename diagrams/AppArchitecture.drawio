@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-12-15T16:07:28.451Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36" etag="ojF6twm26T4n97UTb53t" version="15.9.6" type="github">
+<mxfile host="app.diagrams.net" modified="2021-12-15T16:12:49.902Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36" etag="JEM34QPYjbWWe7zoLMTI" version="15.9.6" type="github">
   <diagram name="Page-1" id="9f46799a-70d6-7492-0946-bef42562c5a5">
     <mxGraphModel dx="1422" dy="882" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
@@ -17,7 +17,7 @@
           <mxGeometry x="285" y="270" width="170" height="120" as="geometry" />
         </mxCell>
         <mxCell id="iLu67vJAD6fTXzTy37Ox-12" value="Front end&lt;br&gt;React, typescript" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="320" y="400" width="110" height="30" as="geometry" />
+          <mxGeometry x="315" y="400" width="110" height="30" as="geometry" />
         </mxCell>
         <mxCell id="iLu67vJAD6fTXzTy37Ox-15" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9AC7BF;" vertex="1" parent="1">
           <mxGeometry x="550" y="240" width="360" height="380" as="geometry" />
@@ -31,8 +31,8 @@
         <mxCell id="iLu67vJAD6fTXzTy37Ox-18" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.folder;" vertex="1" parent="1">
           <mxGeometry x="590" y="500" width="50" height="38" as="geometry" />
         </mxCell>
-        <mxCell id="iLu67vJAD6fTXzTy37Ox-19" value="App logic&lt;br&gt;typescript" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="700" y="250" width="60" height="30" as="geometry" />
+        <mxCell id="iLu67vJAD6fTXzTy37Ox-19" value="Cloud functions&lt;br&gt;typescript" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="680" y="250" width="100" height="30" as="geometry" />
         </mxCell>
         <mxCell id="iLu67vJAD6fTXzTy37Ox-20" value="File system&lt;br&gt;Images" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="570" y="550" width="80" height="30" as="geometry" />
@@ -102,6 +102,9 @@
               <mxPoint x="824" y="440" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="iLu67vJAD6fTXzTy37Ox-42" value="App logic on client side" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;dashed=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="305" y="430" width="130" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
