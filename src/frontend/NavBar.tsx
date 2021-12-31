@@ -1,7 +1,6 @@
 import {Button, Container, Navbar, Nav, Form, FormControl} from "react-bootstrap";
-import classes from './NavBar.module.css'
 
-function NavBar () {
+function NavBar (props: any) {
     return (
         <Navbar bg="light">
             <Container>
