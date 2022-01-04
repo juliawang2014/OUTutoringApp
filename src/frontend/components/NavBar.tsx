@@ -1,8 +1,10 @@
-import {Button, Container, Navbar, Nav, Form, FormControl} from "react-bootstrap";
+import {Button, Container, Navbar, Nav, Form, FormControl, NavDropdown} from "react-bootstrap";
+import BMenu from './BMenu';
 
-function NavBar (props: any) {
+const NavBar: React.FC = (props) => {
     return (
         <Navbar bg="light">
+            <BMenu />
             <Container>
                 <Navbar.Brand href="#home">OU Tutoring</Navbar.Brand>
                 <Nav className="me-auto my-2 my-lg-0">
