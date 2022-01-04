@@ -1,0 +1,22 @@
+.ff{
+    width: 250px !important;
+}
+.text-color{
+    color: black !important;
+    text-align: center;
+    border-bottom: solid 1px;
+}
+
+.menu-border{
+    border-bottom: solid 1px;
+}
+
+.rm-padding{
+    padding: 0 !important;
+}
+
+/*Styling for Hamburger Menu*/
+.BurgerMenu{
+    padding: 0px 12px;
+    position: relative;
+  }

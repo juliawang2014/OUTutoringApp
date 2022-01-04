@@ -1,92 +1,47 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, doc, getDoc } from "firebase/firestore";
+import { auth } from './frontend/services/firebase';
+import { onAuthStateChanged } from 'firebase/auth';
+import Home from './frontend/components/home/Home';
+import SignIn from './frontend/components/signin/SignIn'
+import User from './frontend/components/User/User'
+import NavBar from './frontend/components/navbar/NavBar';
+import Feed from './frontend/components/feed/Feed';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyAP4yOpNgGDrzhDI9lKSFhA3ag8Zm1R1gM",
-  authDomain: "oucalendar-2c0b8.firebaseapp.com",
-  databaseURL: "https://oucalendar-2c0b8-default-rtdb.firebaseio.com",
-  projectId: "oucalendar-2c0b8",
-  storageBucket: "oucalendar-2c0b8.appspot.com",
-  messagingSenderId: "228349542652",
-  appId: "1:228349542652:web:ae74f29e9710bb67905779",
-  measurementId: "G-5EPCP4ZBBM"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore();
-
 
 
 
 function App() {
-  //All users list state
-  let [users, setUsersState] = useState([])
-  //Single User state
-  let [user, setUserState] = useState()
   
 
-  //Fetch single User from database
-  const fetchUsers = async () => {
-    let userList:any = []
-    //query all the documents from the users collection from database
-    const querySnapshot = await getDocs(collection(db, "users"));
-    //loop through those documents and concatenate each user to usersList
-    querySnapshot.forEach((doc) => {
-      userList.push(
-        <div key ={doc.id}>{'Username ' + doc.data().name+ ' age is ' + doc.data().age + ' id is ' + doc.id}</div>
-        )
-            
-    });
-    //set new state as the concatenated list 
-    // The reason why state is used is because everytime it is updated, the component UI will be rerendered containing the fetched data
-    setUsersState(userList)
-    
-  }
+  // This contains the main change so far. React Router was used. This one uses Version 6 and an update is required.
   
-
-  // Fetch single user from database
-  const fetchUser = async() => {
-    let userList:any = []
-    //https://firebase.google.com/docs/firestore/query-data/get-data From Get A document
-    // get single document from users where the id is given
-    const docSnap = await getDoc(doc(db, "users", "iPWWIldQZVbtwZVNsCyY"));
-    console.log("Document data:", docSnap.data());
-    // if a user is returned add the user to a list
-    if(docSnap.exists()){
-      userList.push(
-        <div key ='random'>{'Username ' + docSnap.data().name+ ' age is ' + docSnap.data().age}</div>
-      )
-    }
-    // change user state to rerender the UI and have the user info displayed
-    setUserState(userList)
-    
-  }
-  
-
   return (
     <div className="App">
-      donut sucre au sucre
-      <div>
-        <p>This will fetch all users from the db</p>
-        {users}
-        <button onClick={fetchUsers}>Fetch Users</button>
-      </div>
-      <hr/>
-      <div>
-        <p>This will fetch one single user from the db with a specific ID</p>
-        {user}
-        <button onClick={fetchUser}>Fetch Users</button>
-      </div>
-      
+        
+        
+        <BrowserRouter>
+          {/* The navbar is not wrapped with routes. This means that the navbar will not be reloaded and will remain as it is when the user browses the pages. */}
+          <NavBar />
+          {/* These represent the current routes that the user can access. This is not a too hard to understand so far but it might get harder down the line when dealing with passing 
+          data between the components */}
+            <Routes>
+              {/* each URL path is associated with the component that needs to be rendered on the page */}
+              {/* Guards will also be added later on to prevent users from accessing certain pages without being logged in or having the privileges to do so */}
+              <Route path="/" element={<Home />}/>
+              <Route path="/login" element={<SignIn />} />
+              <Route path="/me" element={<User />} />
+              <Route path="/feed" element={<Feed />} />
+                
+            </Routes>
+        </BrowserRouter>
+        
     </div>
   );
 }
-
+////{user ? <Home user={user}/> : <SignIn />}
 export default App;
