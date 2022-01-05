@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
 import './App.css';
-import { initializeApp } from "firebase/app";
 import { auth } from './frontend/services/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import Home from './frontend/components/Home';
 import SignIn from './frontend/components/SignIn'
-import { getAnalytics, logEvent } from "firebase/analytics";
 
 
 function App() {

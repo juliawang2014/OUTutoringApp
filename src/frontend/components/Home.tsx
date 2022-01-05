@@ -1,4 +1,3 @@
-import React from 'react';
 import { auth } from '../services/firebase';
 import Navbar from './Navbar';
 import Database from '../../backend/Database'
