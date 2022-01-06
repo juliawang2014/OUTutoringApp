@@ -3,6 +3,7 @@ import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import firebase from 'firebase/app';
 import { auth } from '../../services/firebase';
 import { Link, useNavigate} from 'react-router-dom';
+import LoginForm from './LoginForm';
 
 const SignIn = () => {
   //Navigate is used to redirect the page to another one without reloading
@@ -22,6 +23,7 @@ const SignIn = () => {
   return (
     
     <div>
+      <LoginForm />
       <button className="button" onClick={signInWithGoogle}>
         <i className="fab fa-google"></i> Sign in with google
       </button>

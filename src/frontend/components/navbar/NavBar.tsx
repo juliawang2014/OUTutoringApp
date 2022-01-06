@@ -1,5 +1,7 @@
 import {Button, Container, Navbar, Nav, Form, FormControl, NavDropdown} from "react-bootstrap";
 import BMenu from '../sidebar/BMenu';
+import { Link } from 'react-router-dom';
+import '../navbar/NavBar.css';
 
 
 
@@ -9,9 +11,9 @@ const NavBar: React.FC = (props) => {
         <Navbar bg="light">
             <BMenu />
             <Container>
-                <Navbar.Brand href="#home">OU Tutoring</Navbar.Brand>
+                <Link to='/' className="navbar-link"><Navbar.Brand>OU Tutoring</Navbar.Brand></Link>
                 <Nav className="me-auto my-2 my-lg-0">
-                    <Nav.Link href="#home">Home</Nav.Link>
+                    <Link to='/' className="navbar-link"><Nav.Link>Home</Nav.Link></Link>
                 </Nav>
                     <Form className="d-flex">
                         <FormControl
@@ -21,7 +23,7 @@ const NavBar: React.FC = (props) => {
                         aria-label="Search"
                         />
                     </Form>
-                    <Button variant="primary">Login</Button>
+                    <Link to='/login'><Button variant="primary">Log in</Button></Link>
             </Container>
         </Navbar>
     )
