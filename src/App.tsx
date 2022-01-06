@@ -1,14 +1,10 @@
-import React, {useEffect, useState} from 'react';
 import './App.css';
-import { initializeApp } from "firebase/app";
-import { auth } from './frontend/services/firebase';
-import { onAuthStateChanged } from 'firebase/auth';
 import Home from './frontend/components/home/Home';
 import SignIn from './frontend/components/signin/SignIn'
 import User from './frontend/components/User/User'
 import NavBar from './frontend/components/navbar/NavBar';
 import Feed from './frontend/components/feed/Feed';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
