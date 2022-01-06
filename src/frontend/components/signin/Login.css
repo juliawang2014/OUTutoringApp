@@ -1,8 +1,44 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
+.loginForm-container {
+  padding: 10px;
+  display: grid;
+  place-items: center center;
+  height: 100vh;
+}
+
 .loginForm {
-    padding: 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-    border-radius: 14px;
-    background-color: white;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.20);
+  border-radius: 14px;
+  background-color: rgb(255, 255, 255);
+  text-align: left;
   }
+
+.loginForm-header {
+  margin: 0px 0px 24px;
+}
+  #login-container {
+  max-width: 420px;
+  }
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.password-reset-text {
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.password-reset-text:hover {
+  text-decoration: underline;
+}
+
+.or-text {
+  text-align: center;
+  padding: 8px;
+  margin: 0px;
+}

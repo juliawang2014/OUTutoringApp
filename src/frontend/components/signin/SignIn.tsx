@@ -4,6 +4,8 @@ import firebase from 'firebase/app';
 import { auth } from '../../services/firebase';
 import { Link, useNavigate} from 'react-router-dom';
 import LoginForm from './LoginForm';
+import { Container } from 'react-bootstrap';
+import { sign } from 'crypto';
 
 const SignIn = () => {
   //Navigate is used to redirect the page to another one without reloading
@@ -22,14 +24,9 @@ const SignIn = () => {
   
   return (
     
-    <div>
-      <LoginForm />
-      <button className="button" onClick={signInWithGoogle}>
-        <i className="fab fa-google"></i> Sign in with google
-      </button>
-      
-      <Link to='/me'> Next Step</Link>
-    </div>
+    <Container className='loginForm-container'>
+      <LoginForm onSubmit={signInWithGoogle}/>
+    </Container>
   )
 }
 

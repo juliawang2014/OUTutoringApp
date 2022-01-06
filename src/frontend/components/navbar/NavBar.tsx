@@ -1,4 +1,4 @@
-import {Button, Container, Navbar, Nav, Form, FormControl, NavDropdown} from "react-bootstrap";
+import {Button, Container, Navbar, Nav, Form, FormControl} from "react-bootstrap";
 import BMenu from '../sidebar/BMenu';
 import { Link } from 'react-router-dom';
 import '../navbar/NavBar.css';
@@ -23,7 +23,7 @@ const NavBar: React.FC = (props) => {
                         aria-label="Search"
                         />
                     </Form>
-                    <Link to='/login'><Button variant="primary">Log in</Button></Link>
+                    <Link to='/login'><Button variant="primary">Login</Button></Link>
             </Container>
         </Navbar>
     )
