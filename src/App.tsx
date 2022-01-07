@@ -4,6 +4,8 @@ import { auth } from './frontend/services/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import Home from './frontend/components/Home';
 import SignIn from './frontend/components/SignIn'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBar from './frontend/components/NavBar';
 
 
 function App() {
@@ -17,7 +19,8 @@ function App() {
 
   return (
     <div className="App">
-      {user ? <Home user={user}/> : <SignIn />}
+        <NavBar />
+        {user ? <Home user={user}/> : <SignIn />}
     </div>
   );
 }
