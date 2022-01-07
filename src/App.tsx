@@ -5,7 +5,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import Home from './frontend/components/Home';
 import SignIn from './frontend/components/SignIn'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBar from './frontend/components/Navbar';
+import NavBar from './frontend/components/NavBar';
 
 
 function App() {
