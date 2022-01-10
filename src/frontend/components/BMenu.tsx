@@ -20,9 +20,9 @@ const BMenu: React.FC = (props) => {
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                 <ul>
-                    <li><a href="#">Test Elmenet 1</a></li>
-                    <li><a href="#">Test Elmenet 2</a></li>
-                    <li><a href="#">Test Elmenet 3</a></li>
+                    <li><p>Test Elmenet 1</p></li>
+                    <li><p>Test Elmenet 2</p></li>
+                    <li><p>Test Elmenet 3</p></li>
                 </ul>
                 </Offcanvas.Body>
             </Offcanvas>
