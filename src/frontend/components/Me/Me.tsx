@@ -12,6 +12,8 @@ const Me = () => {
   //   );
   // }
 
+  //TODO: Get user info from database here to display role/class standing
+
   return (
     <div className="myProfile">
       This is me (should only allow authenticated users)
