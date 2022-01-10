@@ -1,10 +1,16 @@
-import { useContext } from 'react';
-import { UserContext } from '../../contexts/UserContext';
 import { Card } from 'react-bootstrap';
+//import { Navigate } from 'react-router-dom';
 import './Me.css';
+import { useFirebaseAuth } from '../../contexts/FirebaseAuthContext';
 
 const Me = () => {
-  const { user, setUser } = useContext<any>(UserContext);
+  const user = useFirebaseAuth();
+
+  // if(user == null) {
+  //   return (
+  //     <Navigate to="/"/>
+  //   );
+  // }
 
   return (
     <div className="myProfile">
@@ -13,9 +19,9 @@ const Me = () => {
       <div className="centered">
         <Card>
           {/* <Card.Img variant="top" src={user.photoURL} alt='profilePic' width="200" height="200"/> */}
-          <img src={user.photoURL} alt="" />
+          <Card.Img src={user?.photoURL?.toString()} alt="Profile Image" />
           <Card.Body>
-            <Card.Title>{user.displayName}</Card.Title>
+            <Card.Title>{user?.displayName}</Card.Title>
             <Card.Text>Role here</Card.Text>
             <Card.Text>Class standing/major here</Card.Text>
           </Card.Body>

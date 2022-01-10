@@ -1,16 +1,9 @@
-import { auth } from '../services/firebase';
 import Database from '../../backend/Database';
-import { useContext } from 'react';
-import { UserContext } from '../contexts/UserContext';
 import SignIn from './SignIn';
+import { useFirebaseAuth } from '../contexts/FirebaseAuthContext';
 
 const Home = () => {
-  const { user, setUser } = useContext<any>(UserContext);
-
-  const signout = async () => {
-    await auth.signOut();
-    setUser(null);
-  }
+  const user = useFirebaseAuth();
 
   return (
     <div className="home">
@@ -18,9 +11,7 @@ const Home = () => {
         <>
           {/* If user is logged in*/}
           <h1>Hello, <span></span>{user.displayName}</h1>
-          <img src={user.photoURL} alt="" />
-          <button className="button signout" onClick={() => signout()}>Sign out</button>
-
+          <img src={user.photoURL?.toString()} alt="" />
           <Database/>
         </>
       ) : (

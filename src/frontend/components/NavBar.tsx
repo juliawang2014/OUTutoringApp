@@ -1,11 +1,15 @@
-import {Button, Container, Navbar, Nav, Form, FormControl, NavDropdown} from "react-bootstrap";
+import {Button, Container, Navbar, Nav, Form, FormControl} from "react-bootstrap";
 import BMenu from './BMenu';
-import { UserContext } from '../contexts/UserContext';
-import { useContext } from 'react';
-import { Link } from 'react-router-dom';   
+import { signOut } from "firebase/auth";
+import { auth } from "../services/firebase";
+import { useFirebaseAuth } from "../contexts/FirebaseAuthContext";
 
 const NavBar: React.FC = (props) => {
-    const { user } = useContext<any>(UserContext);
+    const user = useFirebaseAuth();
+
+    const logOut = async () => {
+        await signOut(auth);
+    }
 
     return (
         <Navbar bg="light">
@@ -24,7 +28,10 @@ const NavBar: React.FC = (props) => {
                         />
                     </Form>
                     {user ? (
-                        <p>Hello <Link to="/me">{user.displayName}</Link></p>
+                        <>
+                            <Nav.Link href="/me">{user.displayName}</Nav.Link>
+                            <Button variant="primary" onClick={() => logOut()}>Sign Out</Button>
+                        </>
                     ) : (
                         <Button variant="primary">Login</Button>
                     )}

@@ -1,15 +1,15 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from 'firebase/auth';
-import {getFirestore} from 'firebase/firestore';
+import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA_YpeR-nCdjPFCbQREO3Bg9Dp4BIWUPpk",
-  authDomain: "oututoringdatabase.firebaseapp.com",
-  projectId: "oututoringdatabase",
-  storageBucket: "oututoringdatabase.appspot.com",
-  messagingSenderId: "763676444526",
-  appId: "1:763676444526:web:b0eac5aa6892e9a2ac237f",
-  measurementId: "G-CC2H30MC7N"
+  apiKey: "AIzaSyBfNizYuPtMyxyJZGfCWaPht3Ld9bjq-Mo",
+  authDomain: "oututoringdatabaseqa.firebaseapp.com",
+  projectId: "oututoringdatabaseqa",
+  storageBucket: "oututoringdatabaseqa.appspot.com",
+  messagingSenderId: "167188089927",
+  appId: "1:167188089927:web:4e34cbe5d4920396743562",
+  measurementId: "G-YXP0GBMMHZ"
 };
 
 // Initialize Firebase
