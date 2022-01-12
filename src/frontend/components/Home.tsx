@@ -1,14 +1,10 @@
-import { auth } from '../services/firebase';
-import Database from '../../backend/Database'
+import NavBar from './NavBar';
 
-const Home = ({ user }: any) => {
+
+const Home = () => {
   return (
     <div className="home">
-      <h1>Hello, <span></span>{user.displayName}</h1>
-      <img src={user.photoURL} alt="" />
-      <button className="button signout" onClick={() => auth.signOut()}>Sign out</button>
-
-      <Database/>
+      <NavBar/>
     </div>
   )
 }

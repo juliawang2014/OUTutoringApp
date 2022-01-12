@@ -1,5 +1,7 @@
-import {Button, Container, Navbar, Nav, Form, FormControl} from "react-bootstrap";
+import React from "react";
+import {Button, Container, Navbar, Nav, Form, FormControl, Image} from "react-bootstrap";
 import BMenu from './BMenu';
+import Profile from './Profile';
 
 const NavBar: React.FC = (props) => {
     return (
@@ -17,8 +19,8 @@ const NavBar: React.FC = (props) => {
                         className="me-2"
                         aria-label="Search"
                         />
-                    </Form>
-                    <Button variant="primary">Login</Button>
+                    </Form>       
+                <Profile/>             
             </Container>
         </Navbar>
     )

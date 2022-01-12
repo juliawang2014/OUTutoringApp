@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import { auth } from './frontend/services/firebase';
-import { onAuthStateChanged } from 'firebase/auth';
+import { getAdditionalUserInfo, onAuthStateChanged } from 'firebase/auth';
 import Home from './frontend/components/Home';
-import SignIn from './frontend/components/SignIn'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBar from './frontend/components/NavBar';
+import NavBarSignedOut from './frontend/components/NavBarSignedOut'
 
 
 function App() {
@@ -14,13 +13,11 @@ function App() {
   useEffect(() => {
     onAuthStateChanged(auth, user => {
       setUser(user);
-    })
-  }, []);
+    })}, []);
 
   return (
     <div className="App">
-        <NavBar />
-        {user ? <Home user={user}/> : <SignIn />}
+        {user ? <Home/> : <NavBarSignedOut/>}
     </div>
   );
 }
