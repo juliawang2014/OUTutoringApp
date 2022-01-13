@@ -1,8 +1,9 @@
-import {Button, Container, Navbar, Nav, Form, FormControl} from "react-bootstrap";
+import {Button, Container, Navbar, Nav, Form, FormControl, Dropdown, Image} from "react-bootstrap";
 import BMenu from './BMenu';
 import { signOut } from "firebase/auth";
 import { auth } from "../services/firebase";
 import { useFirebaseAuth } from "../contexts/FirebaseAuthContext";
+import SignIn from "./SignIn";
 
 const NavBar: React.FC = (props) => {
     const user = useFirebaseAuth();
@@ -21,19 +22,29 @@ const NavBar: React.FC = (props) => {
                 </Nav>
                     <Form className="d-flex">
                         <FormControl
-                        type="search"
-                        placeholder="Search"
-                        className="me-2"
-                        aria-label="Search"
+                            type="search"
+                            placeholder="Search"
+                            className="me-2"
+                            aria-label="Search"
                         />
                     </Form>
                     {user ? (
                         <>
-                            <Nav.Link href="/me">{user.displayName}</Nav.Link>
-                            <Button variant="primary" onClick={() => logOut()}>Sign Out</Button>
+                            <Dropdown>
+                                <Dropdown.Toggle variant="white" id="imageDropDown">
+                                    <img src={user?.photoURL?.toString()} width="40" height="40" className="rounded-circle"/>
+                                </Dropdown.Toggle>
+
+                                <Dropdown.Menu>
+                                    <Dropdown.Item>Hello {user?.displayName}</Dropdown.Item>
+                                    <Dropdown.Item button="Profile" href="/me">Profile</Dropdown.Item>
+                                    <Dropdown.Item button="Schedule">Schedule</Dropdown.Item>
+                                    <Dropdown.Item button="SignOut" onClick={() => logOut()}>Sign Out</Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
                         </>
                     ) : (
-                        <Button variant="primary">Login</Button>
+                        <SignIn/>
                     )}
             </Container>
         </Navbar>

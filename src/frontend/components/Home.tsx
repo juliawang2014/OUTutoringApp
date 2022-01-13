@@ -15,7 +15,9 @@ const Home = () => {
           <Database/>
         </>
       ) : (
-        <SignIn/>
+        <>
+          <SignIn/>
+        </>
       )}
     </div>
   )

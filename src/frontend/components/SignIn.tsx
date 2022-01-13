@@ -1,5 +1,6 @@
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { auth } from '../services/firebase';
+import { Button } from 'react-bootstrap';
 
 const SignIn = () => {
   const signInWithGoogle = async () => {
@@ -10,9 +11,7 @@ const SignIn = () => {
 
   return (
     <div>
-      <button className="button" onClick={signInWithGoogle}>
-        <i className="fab fa-google"></i> Sign in with google
-      </button>
+      <Button variant="primary" onClick={signInWithGoogle}>Login</Button>
     </div>
   )
 }
