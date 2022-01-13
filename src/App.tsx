@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './frontend/components/NavBar';
 import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
 import { FirebaseAuthProvider } from "./frontend/contexts/FirebaseAuthContext";
+import LoginForm from './frontend/components/Login/LoginForm';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <NavBar />
           <Routes>
               <Route path="/" element={<Home/>}/>
+              <Route path="/login" element={<LoginForm/>}/>
               <Route path="/me" element={<Me/>}/>
           </Routes>
         </FirebaseAuthProvider>

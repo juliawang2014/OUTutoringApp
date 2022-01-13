@@ -1,5 +1,5 @@
 import Database from '../../backend/Database';
-import SignIn from './SignIn';
+import GoogleSignIn from './SignIn';
 import { useFirebaseAuth } from '../contexts/FirebaseAuthContext';
 
 const Home = () => {
@@ -16,7 +16,7 @@ const Home = () => {
         </>
       ) : (
         <>
-          <SignIn/>
+          <GoogleSignIn/>
         </>
       )}
     </div>

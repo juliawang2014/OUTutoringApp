@@ -1,9 +1,8 @@
-import {Button, Container, Navbar, Nav, Form, FormControl, Dropdown, Image} from "react-bootstrap";
+import {Container, Navbar, Nav, Form, FormControl, Dropdown, Button} from "react-bootstrap";
 import BMenu from './BMenu';
 import { signOut } from "firebase/auth";
 import { auth } from "../services/firebase";
 import { useFirebaseAuth } from "../contexts/FirebaseAuthContext";
-import SignIn from "./SignIn";
 
 const NavBar: React.FC = (props) => {
     const user = useFirebaseAuth();
@@ -32,7 +31,11 @@ const NavBar: React.FC = (props) => {
                         <>
                             <Dropdown>
                                 <Dropdown.Toggle variant="white" id="imageDropDown">
-                                    <img src={user?.photoURL?.toString()} width="40" height="40" className="rounded-circle"/>
+                                    <img src={user?.photoURL?.toString()} 
+                                         width="40" 
+                                         height="40" 
+                                         className="rounded-circle"
+                                         alt="Profile Picture"/>
                                 </Dropdown.Toggle>
 
                                 <Dropdown.Menu>
@@ -44,7 +47,7 @@ const NavBar: React.FC = (props) => {
                             </Dropdown>
                         </>
                     ) : (
-                        <SignIn/>
+                        <Button variant="primary" href="/login">Login</Button>
                     )}
             </Container>
         </Navbar>
