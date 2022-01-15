@@ -33,7 +33,7 @@ const Database = () => {
         let userList: any = []
         //https://firebase.google.com/docs/firestore/query-data/get-data From Get A document
         // get single document from users where the id is given
-        const docSnap = await getDoc(doc(db, "users", "iPWWIldQZVbtwZVNsCyY"));
+        const docSnap = await getDoc(doc(db, "users", "7qYeuIP8uKsZrN1fj2HU"));
         console.log("Document data:", docSnap.data());
         // if a user is returned add the user to a list
         if (docSnap.exists()) {

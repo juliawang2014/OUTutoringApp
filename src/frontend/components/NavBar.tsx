@@ -41,7 +41,7 @@ const NavBar: React.FC = (props) => {
                                 <Dropdown.Menu>
                                     <Dropdown.Item>Hello {user?.displayName}</Dropdown.Item>
                                     <Dropdown.Item button="Profile" href="/me">Profile</Dropdown.Item>
-                                    <Dropdown.Item button="Schedule">Schedule</Dropdown.Item>
+                                    <Dropdown.Item button="Schedule" href="/schedule">Schedule</Dropdown.Item>
                                     <Dropdown.Item button="SignOut" onClick={() => logOut()}>Sign Out</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
