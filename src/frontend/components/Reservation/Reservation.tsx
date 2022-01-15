@@ -6,10 +6,10 @@ import { db } from '../../services/firebase';
 
 const Reservation = () => { 
 
-    let [userInfo, setUserState] = useState()
+    let [userInfo, setUserState] = useState();
+    const user = useFirebaseAuth();
 
     const UserReservation = async () => {
-        const user = useFirebaseAuth();
         let userList: any = []
         const userId = user?.uid!;
 
