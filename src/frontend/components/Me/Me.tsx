@@ -2,8 +2,7 @@ import { Card } from 'react-bootstrap';
 //import { Navigate } from 'react-router-dom';
 import './Me.css';
 import { useFirebaseAuth } from '../../contexts/FirebaseAuthContext';
-import { collection, getDocs, doc, getDoc } from "firebase/firestore";
-import { useState } from "react";
+import { doc, getDoc } from "firebase/firestore";
 import {db} from '../../services/firebase';
 
 const Me = () => {
