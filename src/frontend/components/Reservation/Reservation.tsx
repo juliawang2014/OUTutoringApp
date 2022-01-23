@@ -3,7 +3,7 @@ import { doc} from "firebase/firestore";
 import {getDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from '../../services/firebase';
-
+import './Reservation.css';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
@@ -11,6 +11,7 @@ const Reservation = () => {
 
     let [userInfo, setUserState] = useState();
     const user = useFirebaseAuth();
+    const [value, onChange] = useState(new Date());
 
     const UserReservation = async () => {
         let userList: any = []
@@ -28,8 +29,6 @@ const Reservation = () => {
         // change user state to rerender the UI and have the user info displayed
         setUserState(userList)
     }
-    const [value, onChange] = useState(new Date());
-
     //Could not get the useEffect to work - would not return an error but did not display the correct information
     /**useEffect(() => {
 
@@ -58,11 +57,8 @@ const Reservation = () => {
     <div className="Schedule">
         <p>Current Reserved Users</p>
         {userInfo}
-        <button onClick={UserReservation}>Check who is Reserved</button>
-    <Calendar
-    onChange={onChange}
-    value={value}
-    />
+        <button onClick={UserReservation} className = 'buttonReserve'>Check who is Reserved</button>
+        <Calendar className ='ReserveCalendar' onChange={onChange} value={value} />
     </div>
 
     )

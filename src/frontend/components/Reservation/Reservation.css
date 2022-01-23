@@ -1,0 +1,14 @@
+.Schedule {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Schedule .buttonReserve {
+    align-self: center;
+
+}
+
+.Schedule .ReserveCalendar {
+    align-self: center;
+}
