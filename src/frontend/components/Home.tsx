@@ -1,14 +1,24 @@
-import { auth } from '../services/firebase';
-import Database from '../../backend/Database'
+import Database from '../../backend/Database';
+import GoogleSignIn from './SignIn';
+import { useFirebaseAuth } from '../contexts/FirebaseAuthContext';
 
-const Home = ({ user }: any) => {
+const Home = () => {
+  const user = useFirebaseAuth();
+
   return (
     <div className="home">
-      <h1>Hello, <span></span>{user.displayName}</h1>
-      <img src={user.photoURL} alt="" />
-      <button className="button signout" onClick={() => auth.signOut()}>Sign out</button>
-
-      <Database/>
+      {user ? (
+        <>
+          {/* If user is logged in*/}
+          <h1>Hello, <span></span>{user.displayName}</h1>
+          <img src={user.photoURL?.toString()} alt="" />
+          <Database/>
+        </>
+      ) : (
+        <>
+          <GoogleSignIn/>
+        </>
+      )}
     </div>
   )
 }

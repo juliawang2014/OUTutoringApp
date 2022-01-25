@@ -1,0 +1,6 @@
+.centered {
+  height: 50vh; /* Magic here */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
