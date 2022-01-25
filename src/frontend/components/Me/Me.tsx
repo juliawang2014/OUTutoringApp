@@ -2,18 +2,19 @@ import { Card } from 'react-bootstrap';
 //import { Navigate } from 'react-router-dom';
 import './Me.css';
 import { useFirebaseAuth } from '../../contexts/FirebaseAuthContext';
-import { doc, getDoc } from "firebase/firestore";
-import {db} from '../../services/firebase';
+//import { doc, getDoc } from "firebase/firestore";
+//import {db} from '../../services/firebase';
 
 const Me = () => {
   const user = useFirebaseAuth();
 
+  /*
   const fetchUser = async () => {
     //https://firebase.google.com/docs/firestore/query-data/get-data From Get A document
     // get single document from users where the id is given
     const docSnap = await getDoc(doc(db, "users", user?.uid.toString()!));
     console.log("Document data:", docSnap.data());
-  }
+  }*/
 
   // if(user == null) {
   //   return (
