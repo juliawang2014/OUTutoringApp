@@ -35,7 +35,7 @@ const NavBar: React.FC = (props) => {
                                          width="40" 
                                          height="40" 
                                          className="rounded-circle"
-                                         alt="Profile Picture"/>
+                                         alt="Profile"/>
                                 </Dropdown.Toggle>
 
                                 <Dropdown.Menu>
