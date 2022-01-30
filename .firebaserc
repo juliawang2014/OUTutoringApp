@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "oututoringdatabaseqa"
-  }
+    "default": "oututoringdatabaseqa",
+    "qa": "oututoringdatabaseqa",
+    "prod": "oututoringdatabase"
+  },
+  "targets": {}
 }
