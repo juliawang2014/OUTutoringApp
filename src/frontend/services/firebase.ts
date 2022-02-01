@@ -2,14 +2,20 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
+const exec = require("child_process").exec;
+
+const jsonString: string = exec("firebase functions:config:get");
+
+let obj = JSON.parse(jsonString);
+
 const firebaseConfig = {
-  apiKey: "AIzaSyBfNizYuPtMyxyJZGfCWaPht3Ld9bjq-Mo",
-  authDomain: "oututoringdatabaseqa.firebaseapp.com",
-  projectId: "oututoringdatabaseqa",
-  storageBucket: "oututoringdatabaseqa.appspot.com",
-  messagingSenderId: "167188089927",
-  appId: "1:167188089927:web:4e34cbe5d4920396743562",
-  measurementId: "G-YXP0GBMMHZ"
+  apiKey: obj.database.apikey,
+  authDomain: obj.database.authdomain,
+  projectId: obj.database.projectid,
+  storageBucket: obj.database.storagebucket,
+  messagingSenderId: obj.database.messagingsenderid,
+  appId: obj.database.appid,
+  measurementId: obj.database.measurementid
 };
 
 // Initialize Firebase
@@ -18,5 +24,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 const db = getFirestore();
+
+console.log(firebaseConfig);
 
 export { app, auth, db }
