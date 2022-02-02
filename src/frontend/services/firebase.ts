@@ -2,20 +2,16 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
-const exec = require("child_process").exec;
-
-const jsonString: string = exec("firebase functions:config:get");
-
-let obj = JSON.parse(jsonString);
+let data = require('./env.json');
 
 const firebaseConfig = {
-  apiKey: obj.database.apikey,
-  authDomain: obj.database.authdomain,
-  projectId: obj.database.projectid,
-  storageBucket: obj.database.storagebucket,
-  messagingSenderId: obj.database.messagingsenderid,
-  appId: obj.database.appid,
-  measurementId: obj.database.measurementid
+  apiKey: data.fb.apikey,
+  authDomain: data.fb.authdomain,
+  projectId: data.fb.projectid,
+  storageBucket: data.fb.storagebucket,
+  messagingSenderId: data.fb.messagingsenderid,
+  appId: data.fb.appid,
+  measurementId: data.fb.measurementid
 };
 
 // Initialize Firebase
