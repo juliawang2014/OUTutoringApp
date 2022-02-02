@@ -24,8 +24,8 @@
     "web-vitals": "^2.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "npm run env && react-scripts start",
+    "build": "npm run env && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "env": "(firebase functions:config:get) > ./src/frontend/services/env.json"
